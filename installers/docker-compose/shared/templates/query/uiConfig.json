@@ -1,0 +1,25 @@
+{
+    "appName": "query",
+    "env": "test",
+    "sdlc": {
+      "url": "__LEGEND_SDLC_URL__/api"
+    },
+    "depot": {
+      "url": "https://legend.finos.org/unused"
+    },
+    "engine": {
+      "url": "__LEGEND_ENGINE_URL__/api"
+    },
+    "documentation": {
+      "url": "https://legend.finos.org"
+    },
+    "studio": {
+        "url": "__LEGEND_STUDIO_URL__/studio"
+    },
+    "options": {
+      "core": {
+        "TEMPORARY__disableServiceRegistration": true
+      }
+    }
+  }
+  

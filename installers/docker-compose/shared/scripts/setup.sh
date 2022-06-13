@@ -109,6 +109,7 @@ mkdir -p $BUILD_DIR/generated-configs/gitlab
 mkdir -p $BUILD_DIR/generated-configs/sdlc
 mkdir -p $BUILD_DIR/generated-configs/engine
 mkdir -p $BUILD_DIR/generated-configs/studio
+mkdir -p $BUILD_DIR/generated-configs/query
 
 
 ##########################################
@@ -132,7 +133,10 @@ LEGEND_ENGINE_PORT=$(echo $(grep -v '^#' $DOTENV_FILE | grep -e "LEGEND_ENGINE_P
 LEGEND_ENGINE_PUBLIC_URL=http://$HOST_ADDRESS:$LEGEND_ENGINE_PORT
 LEGEND_STUDIO_PORT=$(echo $(grep -v '^#' $DOTENV_FILE | grep -e "LEGEND_STUDIO_PORT" | sed -e 's/.*=//'))
 LEGEND_STUDIO_PUBLIC_URL=http://$HOST_ADDRESS:$LEGEND_STUDIO_PORT
+LEGEND_QUERY_PORT=$(echo $(grep -v '^#' $DOTENV_FILE | grep -e "LEGEND_QUERY_PORT" | sed -e 's/.*=//'))
+LEGEND_QUERY_PUBLIC_URL=http://$HOST_ADDRESS:$LEGEND_QUERY_PORT
 
 SED_CMD 's~__LEGEND_SDLC_PUBLIC_URL__~'$LEGEND_SDLC_PUBLIC_URL'~g' $DOTENV_FILE
 SED_CMD 's~__LEGEND_ENGINE_PUBLIC_URL__~'$LEGEND_ENGINE_PUBLIC_URL'~g' $DOTENV_FILE
 SED_CMD 's~__LEGEND_STUDIO_PUBLIC_URL__~'$LEGEND_STUDIO_PUBLIC_URL'~g' $DOTENV_FILE
+SED_CMD 's~__LEGEND_QUERY_PUBLIC_URL__~'$LEGEND_QUERY_PUBLIC_URL'~g' $DOTENV_FILE

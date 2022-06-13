@@ -71,5 +71,27 @@ services:
       - $BUILD_DIR/.env
     command: /scripts/run-studio.sh
 
+  query:
+    container_name: $LEGEND_QUERY_SERVICE_NAME
+    image: finos/legend-query:$LEGEND_QUERY_IMAGE_VERSION
+    depends_on:
+      - mongod
+      - sdlc
+      - engine
+      - studio
+    ports:
+      - $LEGEND_QUERY_PORT:$LEGEND_QUERY_PORT
+    networks:
+      - legend
+    volumes:
+      - $BUILD_DIR/ssl:/ssl
+      - $BUILD_DIR/generated-configs/query:/config
+      - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
+      - $BUILD_DIR/scripts:/scripts
+      - $BUILD_DIR/templates/query:/templates
+    env_file:
+      - $BUILD_DIR/.env
+    command: /scripts/run-query.sh
+
 networks:
   legend: {}

@@ -28,4 +28,5 @@ for f in $(find /config -type f); do
   sed -i 's~__LEGEND_ENGINE_URL__~'$LEGEND_ENGINE_PUBLIC_URL'~g' $f
   sed -i 's/__LEGEND_STUDIO_PORT__/'$LEGEND_STUDIO_PORT'/g' $f
   sed -i 's~__LEGEND_SDLC_URL__~'$LEGEND_SDLC_PUBLIC_URL'~g' $f
+  sed -i 's~__LEGEND_QUERY_PORT__~'$LEGEND_QUERY_PORT'~g' $f
 done

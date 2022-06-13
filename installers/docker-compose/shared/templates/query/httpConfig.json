@@ -1,0 +1,30 @@
+{
+    "server": {
+      "type": "simple",
+      "applicationContextPath": "/",
+      "adminContextPath": "/admin",
+      "connector": {
+        "port": __LEGEND_QUERY_PORT__,
+        "type": "http"
+      }
+    },
+    "localAssetPaths": {
+        "/query/config.json" : "/config/uiConfig.json"
+    },
+    "logging": {
+      "level": "DEBUG",
+      "appenders": [
+        {
+          "type": "console"
+        }
+      ]
+    },
+    "uiPath": "",
+    "pac4j": {
+      "clients": [
+        {
+          "org.pac4j.core.client.direct.AnonymousClient": {}
+        }
+      ]
+    }
+  }
