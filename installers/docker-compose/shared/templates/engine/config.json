@@ -76,5 +76,11 @@
       "port": 8090
     }
   },
-  "vaults": []
+  "vaults": [],
+  "relationalexecution": {
+    "tempPath": "/tmp/",
+    "temporarytestdb": {
+      "port": 9092
+    }
+  }
 }

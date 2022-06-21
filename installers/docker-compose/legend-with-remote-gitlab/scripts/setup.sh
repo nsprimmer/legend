@@ -88,7 +88,7 @@ echo "$LEGEND_ENGINE_PUBLIC_URL/callback"
 echo "$LEGEND_SDLC_PUBLIC_URL/api/auth/callback"
 echo "$LEGEND_SDLC_PUBLIC_URL/api/pac4j/login/callback"
 echo "$LEGEND_STUDIO_PUBLIC_URL/studio/log.in/callback"
-
+echo "$LEGEND_DEPOT_STORE_PUBLIC_URL/depot-store/callback"
 
 ##########################################
 # 	Copy over templates and scripts

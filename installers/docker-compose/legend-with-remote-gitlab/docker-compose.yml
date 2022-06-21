@@ -71,6 +71,48 @@ services:
       - $BUILD_DIR/.env
     command: /scripts/run-studio.sh
 
+  depot:
+    container_name: $LEGEND_DEPOT_SERVICE_NAME
+    image: finos/legend-depot:latest
+    networks:
+      - legend
+    depends_on:
+      - mongod
+    ports:
+      - $LEGEND_DEPOT_PORT:$LEGEND_DEPOT_PORT
+    environment:
+      DEPOT_SERVER: depot
+      VERSION: 0.1.0-SNAPSHOT
+    env_file:
+      - $BUILD_DIR/.env
+    volumes:
+      - $BUILD_DIR/generated-configs/depot:/config
+      - $BUILD_DIR/scripts:/scripts
+      - $BUILD_DIR/templates/depot:/templates
+      - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
+    command: /scripts/run-depot.sh
+
+  depot_store:
+    container_name: $LEGEND_DEPOT_STORE_SERVICE_NAME
+    image: finos/legend-depot:latest
+    networks:
+      - legend
+    depends_on:
+      - mongod
+    ports:
+      - $LEGEND_DEPOT_STORE_PORT:$LEGEND_DEPOT_STORE_PORT
+    environment:
+      DEPOT_SERVER: depotStore
+      VERSION: 0.1.0-SNAPSHOT
+    env_file:
+      - $BUILD_DIR/.env
+    volumes:
+      - $BUILD_DIR/generated-configs/depot:/config
+      - $BUILD_DIR/scripts:/scripts
+      - $BUILD_DIR/templates/depot:/templates
+      - $BUILD_DIR/generated-configs/gitlab:/gitlab-config
+    command: /scripts/run-depot.sh
+
   query:
     container_name: $LEGEND_QUERY_SERVICE_NAME
     image: finos/legend-query:$LEGEND_QUERY_IMAGE_VERSION

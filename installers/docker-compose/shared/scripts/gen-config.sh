@@ -12,7 +12,7 @@ GITLAB_OAUTH_SECRET=$(echo $(grep -v '^#' $GITLAB_ENV_FILE | grep -e "GITLAB_OAU
 
 # Generate config
 [ "$(ls -A /config)" ] && rm /config/*
-cp -r /templates/* /config
+cp -rv /templates/* /config
 for f in $(find /config -type f); do
   sed -i 's/__MONGO_HOST__/'$MONGO_SERVICE_NAME'/g' $f
   sed -i 's/__MONGO_PORT__/'$MONGO_PORT'/g' $f
@@ -29,4 +29,9 @@ for f in $(find /config -type f); do
   sed -i 's/__LEGEND_STUDIO_PORT__/'$LEGEND_STUDIO_PORT'/g' $f
   sed -i 's~__LEGEND_SDLC_URL__~'$LEGEND_SDLC_PUBLIC_URL'~g' $f
   sed -i 's~__LEGEND_QUERY_PORT__~'$LEGEND_QUERY_PORT'~g' $f
+  sed -i 's~__LEGEND_QUERY_PUBLIC_URL__~'$LEGEND_QUERY_PUBLIC_URL'~g' $f
+  sed -i 's~__LEGEND_DEPOT_PORT__~'$LEGEND_DEPOT_PORT'~g' $f
+  sed -i 's~__LEGEND_DEPOT_URL__~'$LEGEND_DEPOT_PUBLIC_URL'~g' $f
+  sed -i 's~__LEGEND_DEPOT_STORE_PORT__~'$LEGEND_DEPOT_STORE_PORT'~g' $f
+  sed -i 's~__LEGEND_DEPOT_STORE_URL__~'$LEGEND_DEPOT_STORE_PUBLIC_URL'~g' $f
 done
