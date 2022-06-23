@@ -76,5 +76,11 @@
       "port": 8090
     }
   },
+  "query": {
+    "mongoUrl": "mongodb://__MONGO_USER__:__MONGO_PASSWORD__@__MONGO_HOST__:__MONGO_PORT__",
+    "mongoDatabase": "query",
+    "mongoCollectionQuery": "query",
+    "mongoCollectionQueryEvent": "query-event"
+  },
   "vaults": []
 }
