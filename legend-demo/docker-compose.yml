@@ -1,0 +1,74 @@
+services:
+  mongodb:
+    container_name: "legend-demo-mongodb"
+    image: mongo:4.2
+    ports:
+      - 27017:27017
+    networks:
+      - legend-demo
+    environment:
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_ROOT_USERNAME: admin
+    env_file: .env
+    command: --auth
+  legend-engine:
+    container_name: "legend-demo-engine"
+    build:
+      context: engine
+      args:
+        VERSION: 3.1.0
+    env_file: .env
+    ports:
+      - 6060:6060
+    networks:
+      - legend-demo
+  legend-sdlc:
+    container_name: "legend-demo-sdlc"
+    build:
+      context: sdlc
+      args:
+        VERSION: 0.75.0
+    env_file: .env
+    ports:
+      - 7070:7070
+    networks:
+      - legend-demo
+  legend-depot-store:
+    container_name: "legend-demo-depot-store"
+    build:
+      context: depot-store
+    env_file: .env
+    ports:
+      - 9095:9095
+    networks:
+      - legend-demo
+  legend-depot-server:
+    container_name: "legend-demo-depot-server"
+    build:
+      context: depot-server
+    env_file: .env
+    ports:
+      - 9090:9090
+    networks:
+      - legend-demo
+  legend-studio:
+    container_name: "legend-demo-studio"
+    build:
+      context: studio
+    env_file: .env
+    ports:
+      - 8080:8080
+    networks:
+      - legend-demo
+  legend-query:
+    container_name: "legend-demo-query"
+    build:
+      context: query
+    env_file: .env
+    ports:
+      - 9595:9595
+    networks:
+      - legend-demo
+
+networks:
+  legend-demo: {}
