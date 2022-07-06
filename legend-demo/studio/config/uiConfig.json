@@ -15,7 +15,7 @@
     },
     "extensions": {
       "core": {
-        "TEMPORARY__disableSDLCProjectCreation": true,
+        "TEMPORARY__disableSDLCProjectCreation": false,
         "TEMPORARY__disableServiceRegistration": true
       }
     }

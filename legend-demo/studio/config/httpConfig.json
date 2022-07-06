@@ -45,9 +45,9 @@
       }
     },
     "logging": {
-      "level": "INFO",
+      "level": "DEBUG",
       "loggers" : {
-        "root": { "level": "info"},
+        "root": { "level": "debug"},
         "org.pac4j": { "level": "debug"}
       },
       "appenders": [

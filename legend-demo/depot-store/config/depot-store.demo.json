@@ -39,11 +39,11 @@
       "enabled": false
     },
     "logging": {
-      "level": "INFO",
+      "level": "DEBUG",
       "loggers": {
-        "com.gs": "INFO",
+        "com.gs": "DEBUG",
         "Legend Depot Server": {
-          "level": "INFO",
+          "level": "DEBUG",
           "appenders": [
             {
               "type": "console",

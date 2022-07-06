@@ -1,0 +1,20 @@
+{
+    "appName": "query",
+    "env": "prod",
+    "sdlc": {
+      "url": "http://localhost:7070/sdlc/api"
+    },
+    "engine": {
+      "url": "http://localhost:6060/exec/api"
+    },
+    "depot": {
+      "url": "http://localhost:9090/depot/api"
+    },
+    "studio": {
+        "url": "http://localhost:8080/studio"
+    },
+    "documentation": {
+      "url": "https://legend.finos.org"
+    }
+  }
+  

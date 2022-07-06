@@ -12,6 +12,8 @@ services:
     env_file: .env
     command: --auth
   legend-engine:
+    depends_on:
+      - mongodb
     container_name: "legend-demo-engine"
     build:
       context: engine
@@ -23,6 +25,8 @@ services:
     networks:
       - legend-demo
   legend-sdlc:
+    depends_on:
+      - mongodb
     container_name: "legend-demo-sdlc"
     build:
       context: sdlc
@@ -34,6 +38,8 @@ services:
     networks:
       - legend-demo
   legend-depot-store:
+    depends_on:
+      - legend-studio
     container_name: "legend-demo-depot-store"
     build:
       context: depot-store
@@ -43,6 +49,8 @@ services:
     networks:
       - legend-demo
   legend-depot-server:
+    depends_on:
+      - legend-studio
     container_name: "legend-demo-depot-server"
     build:
       context: depot-server
@@ -52,6 +60,9 @@ services:
     networks:
       - legend-demo
   legend-studio:
+    depends_on:
+      - legend-engine
+      - legend-sdlc
     container_name: "legend-demo-studio"
     build:
       context: studio
@@ -61,6 +72,9 @@ services:
     networks:
       - legend-demo
   legend-query:
+    depends_on:
+      - legend-depot-store
+      - legend-depot-server
     container_name: "legend-demo-query"
     build:
       context: query

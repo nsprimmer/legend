@@ -51,8 +51,8 @@ pac4j:
     - /sdlc/api/info
 
 features:
-  canCreateProject: false
-  canCreateVersion: false
+  canCreateProject: true
+  canCreateVersion: true
 
 gitLab:
   newProjectVisibility: public
@@ -69,7 +69,7 @@ gitLab:
 
 logging:
   # Change this to affect library class logging
-  level: INFO
+  level: DEBUG
   appenders:
     - type: console
       logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"
