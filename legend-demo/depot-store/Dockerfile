@@ -3,6 +3,7 @@ FROM maven:3-jdk-11 AS build
 WORKDIR /app/
 RUN git clone https://github.com/finos/legend-depot.git
 WORKDIR /app/legend-depot
+COPY config/authorisedIdentities.json legend-depot-store-server/src/main/resources/authorisedIdentities.json
 RUN mvn install
 RUN mkdir -p /app/bin
 RUN cp /app/legend-depot/legend-depot-server/target/legend-depot-server*.jar /app/bin/

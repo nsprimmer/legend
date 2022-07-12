@@ -54,7 +54,7 @@
       }
     },
     "swagger": {
-      "resourcePackage": "org.finos.legend.depot.store.server",
+      "resourcePackage": "org.finos.legend.depot.store",
       "title": "Legend Depot Store server",
       "uriPrefix": "/depot-store/api"
     },
