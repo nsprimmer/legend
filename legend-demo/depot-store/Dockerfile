@@ -13,5 +13,6 @@ FROM openjdk:11
 
 COPY --from=build /app/bin/*.jar /app/
 COPY entrypoint.sh /app/entrypoint.sh
+COPY config/settings.xml /config/settings.xml
 COPY config/depot-store.demo.json /app/depot-store.demo.json
 CMD ["/app/entrypoint.sh"]

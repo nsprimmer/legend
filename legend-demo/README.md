@@ -56,3 +56,10 @@ With your OIDC Application ready, you should be able to use `docker-compose` to 
     4. Confirm that you are seeing log output for the container.
         * If you find a container that has not provided any log output, run `docker restart <container name>`.
 5. Once you have finished confirming the containers are running, you are ready to continue
+
+
+## Steps To Add and Expand
+
+1. Config injection - gitlab project ID
+2. Config injection - gitlab deploy key
+3. Config injection - gitlab username

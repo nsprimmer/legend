@@ -90,6 +90,11 @@
       "org.pac4j.j2e.filter.CallbackFilter": 4,
       "CORS": 5
     },
+    "artifactRepositoryProviderConfiguration": {
+      "org.finos.legend.depot.artifacts.repository.maven.impl.MavenArtifactRepositoryConfiguration": {
+        "settingsLocation": "/config/settings.xml"
+      }
+    },
     "includeProjectPropertiesConfiguration": {}
   }
   
