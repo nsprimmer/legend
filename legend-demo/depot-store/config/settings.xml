@@ -30,7 +30,7 @@
             <repositories>
                 <repository>
                     <id>private-project-repo</id>
-                    <url>https://gitlab.com/api/v4/projects/37491751/packages/maven</url>
+                    <url>https://gitlab.com/api/v4/projects/__GITLAB_PROJECT_ID__/packages/maven</url>
                     <releases>
                         <enabled>true</enabled>
                         <updatePolicy>never</updatePolicy>
@@ -47,8 +47,8 @@
         <server>
             <id>private-project-repo</id>
             <!-- replace with deploy token username and password-->
-            <username></username>
-            <password></password>
+            <username>__GITLAB_DEPLOY_TOKEN_USERNAME__</username>
+            <password>__GITLAB_DEPLOY_TOKEN_PASSWORD__</password>
         </server>
     </servers>
 </settings>

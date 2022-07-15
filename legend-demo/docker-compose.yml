@@ -1,7 +1,7 @@
 services:
   mongodb:
     container_name: "legend-demo-mongodb"
-    image: mongo:4.2
+    image: mongo:${MONGODB_IMAGE_VERSION}
     ports:
       - 27017:27017
     networks:
@@ -18,7 +18,7 @@ services:
     build:
       context: engine
       args:
-        VERSION: 3.1.0
+        VERSION: ${LEGEND_ENGINE_VERSION}
     env_file: .env
     ports:
       - 6060:6060
@@ -31,7 +31,7 @@ services:
     build:
       context: sdlc
       args:
-        VERSION: 0.75.0
+        VERSION: ${LEGEND_SDLC_VERSION}
     env_file: .env
     ports:
       - 7070:7070
@@ -43,6 +43,9 @@ services:
     container_name: "legend-demo-depot-store"
     build:
       context: depot-store
+      args:
+        GITLAB_USERNAME: ${GITLAB_USERNAME}
+        VERSION: ${LEGEND_DEPOT_VERSION}
     env_file: .env
     ports:
       - 9095:9095
@@ -54,6 +57,8 @@ services:
     container_name: "legend-demo-depot-server"
     build:
       context: depot-server
+      args:
+        VERSION: ${LEGEND_DEPOT_VERSION}
     env_file: .env
     ports:
       - 9090:9090

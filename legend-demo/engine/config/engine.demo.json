@@ -3,13 +3,13 @@
       "mode": "TEST_IGNORE_FUNCTION_MATCH"
     },
     "logging": {
-      "level": "debug",
+      "level": "INFO",
       "loggers": {
         "root": {
-          "level": "debug"
+          "level": "INFO"
         },
         "org.pac4j": {
-          "level": "debug"
+          "level": "INFO"
         }
       },
       "appenders": [

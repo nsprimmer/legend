@@ -69,7 +69,7 @@ gitLab:
 
 logging:
   # Change this to affect library class logging
-  level: DEBUG
+  level: INFO
   appenders:
     - type: console
       logFormat: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5p [%thread] %c - %m%n"

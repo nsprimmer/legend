@@ -1,17 +1,17 @@
 {
     "Artifacts": [
-        "nprimmer"
+        "__GITLAB_USERNAME__"
     ],
     "Store Administration": [
-        "nprimmer"
+        "__GITLAB_USERNAME__"
     ],
     "Projects": [
-        "nprimmer"
+        "__GITLAB_USERNAME__"
     ],
     "Notifications": [
-        "nprimmer"
+        "__GITLAB_USERNAME__"
     ],
     "Entities": [
-        "nprimmer"
+        "__GITLAB_USERNAME__"
     ]
   }
